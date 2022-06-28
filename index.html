@@ -6,13 +6,31 @@
         <link rel="stylesheet" href="assets/css/theme.css" />
     </head>
     <body>
-        <div class="container pt-5" id="app">
+        <div class="container pt-5" id="app" v-cloak>
             <div class="card center">
                 <h2>{{ title }}: {{ counter }}</h2>
                 <div>
                     <button class="btn primary" v-on:click="counter++">+</button>
                     <button class="btn danger" v-on:click="counter--">-</button>
                 </div>
+            </div>
+            <div class="card">
+                <h2>{{ recordsTitle }}</h2>
+                <div class="form-control">
+                    <input
+                        type="text"
+                        v-bind:placeholder="placeholderString"
+                        v-bind:value="inputValue"
+                        v-on:input="inputChangeHandler"
+                    />
+                </div>
+                <button class="btn" v-on:click="addNote">Add</button>
+                <hr />
+                <ul class="list">
+                    <li class="list-item" v-for="note in notes">
+                        {{ note }}
+                    </li>
+                </ul>
             </div>
         </div>
         <script src="https://unpkg.com/vue@3"></script>

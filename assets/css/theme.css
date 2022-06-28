@@ -394,3 +394,7 @@ h3 {
 .navbar-menu li a:hover, .navbar-menu li a.active {
     border-bottom: 2px solid #3eaf7c;
 }
+
+[v-cloak] {
+    display: none;
+}
