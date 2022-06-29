@@ -32,6 +32,8 @@
                         {{ toUpperCase(note) }}
                         <button class="btn danger" @click="removeNote(i, $event)">x</button>
                     </li>
+                    <hr />
+                    <li>Total: {{ notes.length }} | Double: {{ doubleCount }}</li>
                 </ul>
                 <div v-else>Notes list is empty. Add first.</div>
             </div>

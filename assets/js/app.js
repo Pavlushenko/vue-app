@@ -25,6 +25,18 @@ const App = {
         removeNote(i, e) {
             this.notes.splice(i, 1)
         }
+    },
+    computed: {
+        doubleCount() {
+            return this.notes.length * 2
+        }
+    },
+    watch: {
+        inputValue(value) {
+            if (value.length > 10) {
+                this.inputValue = this.inputValue.substr(0, 10)
+            }
+        }
     }
 }
 
