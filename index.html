@@ -10,8 +10,8 @@
             <div class="card center">
                 <h2>{{ title }}: {{ counter }}</h2>
                 <div>
-                    <button class="btn primary" v-on:click="counter++">+</button>
-                    <button class="btn danger" v-on:click="counter--">-</button>
+                    <button class="btn primary" @click="counter++">+</button>
+                    <button class="btn danger" @click="counter--">-</button>
                 </div>
             </div>
             <div class="card">
@@ -19,22 +19,24 @@
                 <div class="form-control">
                     <input
                         type="text"
-                        v-bind:placeholder="placeholderString"
-                        v-bind:value="inputValue"
-                        v-on:input="inputChangeHandler"
-                        v-on:keypress.enter="addNote"
+                        :placeholder="placeholderString"
+                        :value="inputValue"
+                        @input="inputChangeHandler"
+                        @keypress.enter="addNote"
                     />
                 </div>
-                <button class="btn" v-on:click="addNote">Add</button>
+                <button class="btn" @click="addNote">Add</button>
                 <hr />
-                <ul class="list">
-                    <li class="list-item" v-for="note in notes">
-                        {{ note }}
+                <ul class="list" v-if="notes.length !== 0">
+                    <li class="list-item" v-for="(note, i) in notes">
+                        {{ toUpperCase(note) }}
+                        <button class="btn danger" @click="removeNote(i, $event)">x</button>
                     </li>
                 </ul>
+                <div v-else>Notes list is empty. Add first.</div>
             </div>
         </div>
         <script src="https://unpkg.com/vue@3"></script>
-        <script src="assets/js/app.js"
+        <script src="assets/js/app.js"></script>
     </body>
 </html>
