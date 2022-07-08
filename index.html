@@ -15,7 +15,10 @@
                 </div>
             </div>
             <div class="card">
-                <h2>{{ recordsTitle }}</h2>
+                <h2 :style="{
+                    color: inputValue.length < 5 ? 'darkred' : 'darkblue',
+                    fontSize:  inputValue.length < 6 ? '2rem' : '1.5rem'
+                }">{{ recordsTitle }}</h2>
                 <div class="form-control">
                     <input
                         type="text"
