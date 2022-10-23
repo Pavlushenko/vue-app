@@ -6,7 +6,8 @@ const App = {
         recordsTitle: 'Records',
         placeholderString: 'title',
         inputValue: '',
-        notes: []
+        notes: [],
+        myHtml: '<h2>Some html</h2>'
     }),
     methods: {
         addNote() {
