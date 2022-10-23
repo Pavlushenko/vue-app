@@ -1,14 +1,13 @@
 const App = {
-    data() {
-        return {
-            counter: 0,
-            title: 'Counter',
-            recordsTitle: 'Records',
-            placeholderString: 'title',
-            inputValue: '',
-            notes: []
-        }
-    },
+    data: () => ({
+        counter: 0,
+        title: 'Counter',
+        title2: 'First Title',
+        recordsTitle: 'Records',
+        placeholderString: 'title',
+        inputValue: '',
+        notes: []
+    }),
     methods: {
         addNote() {
             if (this.inputValue !== '') {

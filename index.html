@@ -8,6 +8,13 @@
     <body>
         <div class="container pt-5" id="app" v-cloak>
             <div class="card center">
+                <h2 v-text="title2"></h2>
+                <p>(dinamic value)</p>
+                <h2 v-once>{{ title2 }}</h2>
+                <p>(first value - static)</p>
+                <button class="btn" @click="title2 = 'New title'">Change title</button>
+            </div>
+            <div class="card center">
                 <h2>{{ title }}: {{ counter }}</h2>
                 <div>
                     <button class="btn primary" @click="counter++">+</button>
