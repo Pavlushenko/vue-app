@@ -7,7 +7,13 @@ const App = {
         placeholderString: 'title',
         inputValue: '',
         notes: [],
-        myHtml: '<h2>Some html</h2>'
+        myHtml: '<h2>Some html</h2>',
+        person: {
+            firstName: 'John',
+            lastName: 'Smit',
+            age: 27
+        },
+        items: [1, 2, 3, 4, 5, 6]
     }),
     methods: {
         addNote() {
