@@ -32,6 +32,9 @@ const App = {
     computed: {
         doubleCount() {
             return this.notes.length * 2
+        },
+        evenItems() {
+            return this.items.filter(i => i % 2 === 0)
         }
     },
     watch: {
