@@ -64,10 +64,13 @@
                     </li>
                 </ul>
                 <h3>Click index for delete:</h3>
+                <div class="form-control">
+                    <input type="text" @keyup.enter="addItem" ref="myInput">
+                </div>
                 <ul class="list" v-if="items.length">
                     <li
                         class="list-item"
-                        v-for="(item, i) in evenItems"
+                        v-for="(item, i) in items"
                         @click="items.splice(i, 1)"
                         :key="item"
                     >

@@ -27,6 +27,11 @@ const App = {
         },
         removeNote(i, e) {
             this.notes.splice(i, 1)
+        },
+        addItem() {
+            // console.log(this.$refs.myInput.value);
+            this.items.unshift(this.$refs.myInput.value)
+            this.$refs.myInput.value = ''
         }
     },
     computed: {
