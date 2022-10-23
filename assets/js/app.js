@@ -28,8 +28,9 @@ const App = {
         removeNote(i, e) {
             this.notes.splice(i, 1)
         },
-        addItem() {
+        addItem(event) {
             // console.log(this.$refs.myInput.value);
+            // console.log(event.key);
             this.items.unshift(this.$refs.myInput.value)
             this.$refs.myInput.value = ''
         }
